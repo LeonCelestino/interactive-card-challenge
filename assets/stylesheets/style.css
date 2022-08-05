@@ -1,0 +1,25 @@
+:root
+{
+    --primary-linear-gradient: linear-gradient(hsl(249, 99%, 64%) to hsl(278, 94%, 30%));
+    --primary-error: hsl(0, 100%, 66%);
+    --secondary-white: hsl(0, 0%, 100%);
+    --secondary-light: hsl(270, 3%, 87%);
+    --secondary-dark: hsl(279, 6%, 55%);
+    --secondary-very-dark: hsl(278, 68%, 11%);
+}
+
+html
+{
+    font-size: 18px;
+}
+
+*,
+*::before,
+*::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+
+}
