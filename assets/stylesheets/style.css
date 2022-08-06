@@ -27,11 +27,11 @@ html
 
 /* DESKTOP */
 
-section
+.main-container
 {
     display: flex;
-    max-width: 1440px;
-    
+    /* max-width: 1440px; Isso não é uma boa ideia, contando que você ta deixando todo o conteudo nessa sec. não vejo pq esse max width nela*/ 
+    max-width: 100%;
 }
 #left-top-background, #right-bottom-background
 {
@@ -45,10 +45,17 @@ section
 #left-top-background
 {
     flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
     width: 40%;
+		padding: 1em;
     background: url(../images/bg-main-desktop.png);
     background-size: cover;
    
+}
+
+#left-top-background img {
+	max-width: 100%;
 }
 
 #right-bottom-background
@@ -60,23 +67,25 @@ section
 #back-card 
 ,#front-card
 {
-    min-width: 345px;
-    width: 100%;
+		position: relative;
+    min-width: 100px;
     max-width: 447px;
-    height: 100%;
-    max-height: 245px;
-    
+		min-height: 250px;
+    /* height: 100%;
+    max-height: 245px; */
 }
 
 #back-card
 {
     background: url(../images/bg-card-back.png) no-repeat;
     background-size: 100%;
+		width: 80%;
 }
 
 #front-card
 {
     background: url(../images/bg-card-front.png) no-repeat;
+		width: 80%;
     background-size: 100%;
 }
 
@@ -84,14 +93,13 @@ section
 
 @media (max-width: 760px)
 {
-    section
+		.main-container
     {
         flex-direction: column;
     }
 
     #left-top-background
     {
-        min-width: 375px;
         width: 100%;
         min-height: 330px;
         height: 30vh;
@@ -119,11 +127,42 @@ section
 
     #back-card
     {
-        right: -5%;
-        top: 20px;
+				margin-right: -15%;
+        /* top: 3.5em; */
     }
     #front-card
     {
-        top: 163px;
+        bottom: -4.5em;
+				/* left: 5%; */
+				max-width: 400px;
     }
+}
+
+@media (max-width: 530px){
+	#back-card, #front-card {
+		min-width: 300px;
+	}
+	#back-card{		
+		top: 3.5em;
+	}
+
+	#front-card{
+		margin-bottom: -3em;
+		margin-left: -5%;
+	}
+}
+
+@media (min-width: 768px)
+{
+	#back-card, #front-card {
+		min-width: 300px;
+	}
+	#back-card{
+		left: -5%;
+		top: 3.5em;
+	}
+
+	#front-card{
+		bottom: 1em;
+	}
 }
