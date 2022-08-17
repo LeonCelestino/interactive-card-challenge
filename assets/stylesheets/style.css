@@ -21,31 +21,40 @@ html
     padding: 0;
     box-sizing: border-box;
     font-family: 'Space Grotesk', sans-serif;
+    outline: none;
+
 
 }
 
 
 /* DESKTOP */
 
+body
+{
+    overflow: hidden;
+}
 section
 {
     display: flex;
-    max-width: 1440px;
+    align-items: center;
+    max-width: 100%;
     
 }
 #left-top-background, #right-bottom-background
 {
     display: flex;
-    justify-content: center;
-    align-items: center;
     position: relative;
-    min-height: 100vh;
+    min-width: 345px;
+    height: 100vh;
 }
 
 #left-top-background
 {
-    flex-direction: column;
+    flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
     width: 40%;
+    max-width:345px;
     background: url(../images/bg-main-desktop.png);
     background-size: cover;
    
@@ -54,17 +63,20 @@ section
 #right-bottom-background
 {
     width: 60%;
+    justify-content: flex-end;
+    align-items: center;
 }
+
+
 
 /* CARDS STYLE */
 #back-card 
 ,#front-card
 {
-    min-width: 345px;
-    width: 100%;
-    max-width: 447px;
-    height: 100%;
-    max-height: 245px;
+    position: relative;
+    max-width: 575px;
+    min-height: 187px;
+    border-radius: 5px;
     
 }
 
@@ -72,18 +84,346 @@ section
 {
     background: url(../images/bg-card-back.png) no-repeat;
     background-size: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 40px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
 }
 
 #front-card
 {
     background: url(../images/bg-card-front.png) no-repeat;
     background-size: 100%;
+    background-position: right bottom;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+    color: var(--secondary-white);
+    letter-spacing: 2px;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+    
+    
+}
+
+#card-number
+{
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 500;
+    top: 1em;
+}
+
+.cardname-cardexpire
+{
+    text-transform: uppercase;
+    font-weight: 300;
+}
+#cvc
+{
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    color: var(--secondary-white);
+    position: absolute;
+    transform: translateY(-2px);
+}
+
+.cardname-cardexpire
+{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.6rem;
+}
+
+.logo
+{
+    width: 4em;
+}
+.logo img {
+    max-width: 100%;
+}
+
+    #front-card
+    {
+        top: -4em;
+        right: -6em;
+
+    }
+
+    #back-card
+    {
+        top: -2em;
+        right: -10em;
+        
+    }
+
+/* forms style */
+#card-info
+{
+    display: flex;
+    flex-direction: column;
+    width: 22em;
+    padding: 15px;
+    
+}
+
+
+.input-box
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2em;
+
+}
+
+label
+{
+    color: var(--secondary-very-dark);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    padding: 5px;
+}
+.input-box input[type="text"]
+{
+    padding: 10px;
+    font-size: 1rem;
+    text-transform: capitalize;
+    border: 1px solid var(--secondary-light);
+    
+    border-radius: 10px;
+    color: var(--secondary-very-dark);
+}
+
+.input-box input[type="text"]:focus
+{
+    border-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+    background: linear-gradient(white,white) padding-box, linear-gradient( hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
+}
+
+::placeholder
+{
+    color: var(--secondary-dark);
+    
+}
+
+.expire-cvc-box .input-box
+{
+    flex-direction: row;
+    gap: 10px
+}
+
+.outer-date-box .input-box
+{
+    flex-direction: row;
+}
+
+
+.outer-date-box
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.date-box input[type="text"]
+{
+    width: 4em;
+}
+
+
+.cvc-box
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.cvc-box input[type="text"]
+{
+    width: 11.52em;
+}
+
+form input[type="submit"] 
+{
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    background: var(--secondary-very-dark);
+    color: white;
+    font-size: 1rem;
+}
+
+/* larger medias */
+
+@media (min-width: 1650px)
+{
+    #left-top-background
+    {
+        width: 40vw;
+        max-width: 600px;
+
+    }
+
+    #right-bottom-background
+    {
+        justify-content: center;
+    }
+
+    #back-card
+    {
+        right: -50%
+    }
+
+    #front-card
+    {
+        right: -30%;
+    }
+
+
+    #card-info
+    {
+        width: 25vw;
+        
+    }
+
+    label
+    {
+        font-size: 0.9rem;
+    }
+    .input-box input[type="text"]
+    {
+        padding: 15px;
+        font-size: 1rem;
+    }
+    .date-box input[type="text"]
+    {
+        width: 45%;
+    }
+
+    .cvc-box input[type="text"]
+    {
+        width: 10em;
+    }
+
+}
+@media (min-width: 1100px)
+{
+
+    #left-top-background
+    {
+        min-width: 480px;
+
+    }
+
+    #back-card, #front-card
+    {
+        min-width: 480px;
+        min-height: 260px;
+        border-radius: 10px;
+        
+    }
+
+    #back-card
+    {
+        top: 2rem;
+    }
+    #front-card
+    {
+        padding: 29px;
+        top: -1rem;
+    }
+    #card-number
+    {
+        font-size: 1.9rem;
+        top: 0.8em;
+    }
+
+    #front-card .logo
+    {
+        width: 15em;
+    }
+
+    .cardname-cardexpire
+    {
+        font-size: 1rem;
+    }
+
+    #cvc
+    {
+        font-size: 1.1rem;
+        transform: translateX(-25px);
+    }
 }
 
 /* MOBILE */
 
+@media (max-width: 1100px)
+{
+    #left-top-background
+    {
+        min-width: 280px;
+        max-width: 250px;
+
+    }
+    #front-card,
+    #back-card
+    {
+        min-width: 350px;
+        min-height: 190px;
+    }
+
+    #front-card
+    {
+        right: -3em;
+    }
+
+    #back-card
+    {
+        right: -5em;
+    }
+    #front-card #card-number
+    {
+        font-size: 1rem;
+        top: 0.4em;
+    }
+
+
+    #card-info
+    {
+        width: 18em;
+    }
+
+    label
+    {
+        font-size: 0.8rem;
+    }
+    .input-box input[type="text"]
+    {
+        padding: 15px;
+        font-size: 1rem;
+    }
+    .date-box input[type="text"]
+    {
+        width: 4em;
+    }
+
+    .cvc-box input[type="text"]
+    {
+        width: 7.52em;
+    }
+
+
+}
 @media (max-width: 760px)
 {
+    body
+    {
+        overflow: hidden;
+    }
     section
     {
         flex-direction: column;
@@ -92,13 +432,14 @@ section
     #left-top-background
     {
         min-width: 375px;
+        max-width: 760px;
         width: 100%;
-        min-height: 330px;
+        min-height: 300px;
         height: 30vh;
         background-image: url(../images/bg-main-mobile.png);
         background-repeat: no-repeat;
-        background-position: center;
         background-size: cover;
+        flex-direction: column;
 
     }
 
@@ -107,23 +448,55 @@ section
     #right-bottom-background
     {
         min-height: 69vh;
-        min-width: 375px;
-        width: 100%;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 120px;
     }
-
-    #back-card 
-    ,#front-card
+    #back-card, #front-card
     {
-        position: absolute;
+        width: 40%;
+        min-height: 194px;
     }
-
     #back-card
     {
-        right: -5%;
-        top: 20px;
+        margin-right: -5%;
+        
+        top: 4em;
+        right: 0;
     }
-    #front-card
+
+    #back-card #cvc
     {
-        top: 163px;
+        padding: 0 10px 3px 0;
+        font-size: 1rem;
+        font-weight: 600;
     }
+
+    #front-card 
+    {
+        margin-bottom: -5em;
+        margin-left: -15%;
+        top: -0.5em;
+        right: 0;
+
+        
+    }
+
+    #front-card #card-number
+    {
+        font-size: 1.3rem;
+        top: 0.5em;
+    }
+
+    .logo
+    {
+        width: 4em;
+    }
+    .cardname-cardexpire
+    {
+        font-size: 0.8rem;
+    }
+    
+
 }
+
