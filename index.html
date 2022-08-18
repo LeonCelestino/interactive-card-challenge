@@ -14,21 +14,23 @@
     <link rel="stylesheet" href="./assets/stylesheets/style.css">
 </head>
 <body>
+    <!-- SINGLE SECTION PAGE -->
     <section>
+        <!-- CARDS BOX -->
     <div id="left-top-background">
-        <div id="back-card">
-            <div id="cvc" data-js="cardcvc">
+        <div id="back-card"> <!-- BACK CARD BOX -->
+            <div id="cvc" data-js="cardcvc"> <!-- CVC -->
                 <p>000</p>
             </div>
         </div>
-        <div id="front-card">
-            <div class="logo">
+        <div id="front-card"> <!-- FRONT CARD BOX -->
+            <div class="logo"> 
                 <img src="./assets/images/card-logo.svg" alt="">
             </div>
-            <div id="card-number" data-js="cardnumber">
+            <div id="card-number" data-js="cardnumber"> <!-- CARD NUMBER -->
                 <p>0000 0000 0000 0000</p>
             </div>
-            <div class="cardname-cardexpire">
+            <div class="cardname-cardexpire"> <!-- DIV TO CARD NAME AND CARD EXPIRE DATE-->
                 <div id="card-name" data-js="cardname">
                     <p>Jurisvaldo</p>
                 </div>
@@ -38,25 +40,25 @@
             </div>
         </div>
     </div>
-    <div id="right-bottom-background">
-        <form id="card-info" novalidate>
+    <div id="right-bottom-background"> <!-- INPUTS DIV -->
+        <form id="card-info" novalidate> <!-- FORM -->
             
-            <div class="input-box">
+            <div class="input-box"> <!-- INPUT BOX FOR CARDNAME -->
                 <label for="">cardholder name</label>
                 <input type="text" name="carholder" id="cardholder" placeholder="jurisvaldo" data-js="cardnameinput">
             </div>
         
-            <div class="input-box">
+            <div class="input-box"> <!-- INPUT BOX FOR CARDNUMBER -->
                 <label for="">card number</label>
                 <input type="text" name="carholder" id="cardnumber" placeholder="e.g. 1234 5678 9123 0000" data-js="cardnumberinput">
             </div>
         
 
-            <div class="expire-cvc-box">
+            <div class="expire-cvc-box"> <!-- OUTER BOX FOR DATE AND CVC INPUTS BOX BECAUSE I WANNA USE FLEX BOX TO inline behavior -->
                 <div class="input-box">
                     <div class="outer-date-box">
                         <label for="">exp. date (mm/yy)</label>
-                        <div class="date-box">
+                        <div class="date-box"> 
                             <input type="text" name="month" id="month" placeholder="MM" data-js="cardmonthinput">
                             <input type="text" name="year" id="year" placeholder="YY" data-js="cardyearinput">
                         </div>
