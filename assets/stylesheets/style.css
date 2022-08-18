@@ -31,7 +31,7 @@ html
 
 body
 {
-    overflow: hidden;
+    overflow-x: hidden;
 }
 section
 {
@@ -70,11 +70,11 @@ section
 
 #right-bottom-background /* SPECIFIC STYLE */
 {
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
 
     width: 60%;
-    
+    left: 5em;
 }
 
 
@@ -290,11 +290,13 @@ form input[type="submit"]
 
 @media (min-width: 1650px)
 {
+
     /* CARDS FATHER BOX SIZING AND FLEX BEHAVIOR */
     #left-top-background
     {
         width: 40vw;
-        max-width: 600px;
+        max-width: 40em;
+        height: 100vh;
 
     }
 
@@ -304,6 +306,12 @@ form input[type="submit"]
     }
 
     /* CARDS POSITION */
+    #back-card, #front-card
+    {
+        width: 30em;
+        height: 16em;
+
+    }
 
     #back-card
     {
@@ -319,7 +327,7 @@ form input[type="submit"]
 
     #card-info
     {
-        width: 25vw;
+        width: 25em;
         
     }
 
@@ -335,16 +343,16 @@ form input[type="submit"]
     {
         font-size: 1rem;
 
-        padding: 15px;
+        padding: 0.8em;
     }
     .date-box input[type="text"]
     {
-        width: 45%;
+        width: 4em;
     }
 
     .cvc-box input[type="text"]
     {
-        width: 10em;
+        width: 14em;
     }
 
 }
@@ -361,8 +369,8 @@ form input[type="submit"]
     /* CARDS SIZING AND POSITION */
     #back-card, #front-card
     {
-        min-width: 480px;
-        min-height: 260px;
+        min-width: 24.3em;
+        min-height: 13em;
         border-radius: 10px;
         
     }
@@ -383,7 +391,7 @@ form input[type="submit"]
 
     #card-number
     {
-        font-size: 1.9rem;
+        font-size: 1.8rem;
 
         top: 0.8em;
     }
@@ -395,7 +403,7 @@ form input[type="submit"]
 
     .cardname-cardexpire
     {
-        font-size: 1rem;
+        font-size: 0.8rem;
     }
 
     #cvc
@@ -407,9 +415,13 @@ form input[type="submit"]
 }
 
 
-@media (max-width: 1100px)
+@media (max-width: 1099px)
 {
 
+    body
+    {
+        overflow-y: hidden;
+    }
     /* CARD FATHER DIV STYLE */
     #left-top-background
     {
@@ -418,47 +430,67 @@ form input[type="submit"]
 
     }
 
+    #right-bottom-background
+    {
+        left: 5em;
+    }
+
      /* CARDS SIZING */
 
     #front-card,
     #back-card
     {
-        min-width: 350px;
-        min-height: 190px;
-    }
-
-    #front-card
-    {
-        right: -3em;
+        min-width: 18em;
+        min-height: 9.5em;
+        border-radius: 10px;
     }
 
     /* CARDS POSITIONING */
 
+    #front-card
+    {
+        right: -4em;
+        top: -1em;
+    }
+
     #back-card
     {
-        right: -5em;
+        right: -7em;
+        top: 1em;
     }
 
     /* CARDS CONTENT */
 
+    #cvc
+    {
+        padding: 0.3em 0 0 0;
+    }
+
     #front-card #card-number
     {
-        font-size: 1rem;
+        font-size: 0.95rem;
 
         top: 0.4em;
+    }
+
+    /* LOGO  */
+
+    .logo
+    {
+        width: 3.2em;
     }
 
     /* FORM  */
 
     #card-info
     {
-        width: 18em;
+        width: 15em;
     }
 
     /* LABEL */
     label
     {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
 
     /* INPUTS STYLE */
@@ -471,12 +503,12 @@ form input[type="submit"]
 
     .date-box input[type="text"]
     {
-        width: 4em;
+        width: 3.42em;
     }
 
     .cvc-box input[type="text"]
     {
-        width: 7.52em;
+        width: 5.52em;
     }
 
 
@@ -491,7 +523,8 @@ form input[type="submit"]
     
     body
     {
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
 
     /* SECTION FLEX BEHAVIOR */
@@ -526,13 +559,16 @@ form input[type="submit"]
 
         min-height: 69vh;
         padding-top: 120px;
+
+        left: 0;
     }
 
     /* CARDS STYLE */
 
     #back-card, #front-card
     {
-        width: 40%;
+        min-width: 375px;
+        width: 30%;
         min-height: 194px;
     }
     #back-card
@@ -545,10 +581,11 @@ form input[type="submit"]
 
     #back-card #cvc
     {
-        padding: 0 10px 3px 0;
-
+        padding: 0 0.3em 0em 0;
+        margin-top: 0.6em;
         font-size: 1rem;
         font-weight: 600;
+
     }
 
     #front-card 
@@ -556,7 +593,7 @@ form input[type="submit"]
         margin-bottom: -5em;
         margin-left: -15%;
 
-        top: -0.5em;
+        top: 0.1em;
         right: 0;
 
         
@@ -582,3 +619,46 @@ form input[type="submit"]
 
 }
 
+
+@media (max-width: 545px)
+{
+    #back-card, #front-card
+    {
+        min-width: 17em;
+        min-height: 9em;
+
+    }
+
+    #front-card
+    {
+        top: 0.4em;
+    }
+    
+    #front-card #card-number
+    {
+        font-size: 1rem;
+
+        top: 0.5em;
+    }
+
+    .logo
+    {
+        width: 3em;
+    }
+
+    .cardname-cardexpire
+    {
+        font-size: 0.7rem;
+    }
+
+    #back-card #cvc
+    {
+        padding: 0 0.3em 0em 0;
+        margin-top: 0.3em;
+
+        font-size: 1rem;
+        font-weight: 600;
+
+    }
+    
+}
