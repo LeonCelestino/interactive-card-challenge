@@ -6,6 +6,7 @@ document.querySelector("[data-js='cardnumberinput']").addEventListener('input', 
     target.value = target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
     
     target.selectionEnd = position += ((target.value.charAt(position - 1) === ' ' && target.value.charAt(length - 1) === ' ') ? 1 : 0);
+    console.log(length + ' ' + ' ' + target.value.length);
 
     const liveCardInput = document.querySelector("[data-js='cardnumber']");
     liveCardInput.innerHTML = `<p>${target.value}</p>`

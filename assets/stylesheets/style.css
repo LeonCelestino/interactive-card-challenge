@@ -181,8 +181,9 @@ section
     display: flex;
         flex-direction: column;
         
-    width: 22em;
-    padding: 15px;
+    width: 50%;
+        min-width: 15em;
+        max-width: 20em;
 
     position: relative;
     
@@ -205,7 +206,6 @@ section
 .expire-cvc-box .input-box
 {
     flex-direction: row;
-    gap: 10px
 }
 
 
@@ -259,22 +259,19 @@ label
     background: linear-gradient(white,white) padding-box, linear-gradient( hsl(249, 99%, 64%), hsl(278, 94%, 30%)) border-box;
 }
 
-.input-box input[type="text"]:invalid::after
-{
-    content: 'Just numbers!';
-    font-size: 2rem;
-    color: black;
-}
-
 /* CVC AND DATE SPECIFIC STYLE */
 .date-box input[type="text"]
 {
-    width: 4em;
+    width: 40%;
+     min-width: 3em;
+     max-width: 5em;
 }
 
 .cvc-box input[type="text"]
 {
-    width: 11.52em;
+    width:100%;
+        min-width: 6em;
+        max-width: 11.7em;
 }
 
 ::placeholder
@@ -354,7 +351,7 @@ span
 
     #card-info
     {
-        width: 25em;
+        max-width: 22em;
         
     }
 
@@ -371,15 +368,6 @@ span
         font-size: 1rem;
 
         padding: 0.8em;
-    }
-    .date-box input[type="text"]
-    {
-        width: 4em;
-    }
-
-    .cvc-box input[type="text"]
-    {
-        width: 14em;
     }
 
     #front-card #card-number
@@ -523,7 +511,7 @@ span
 
     #card-info
     {
-        width: 15em;
+        min-width: 15em;
     }
 
     /* LABEL */
@@ -534,21 +522,7 @@ span
 
     /* INPUTS STYLE */
 
-    .input-box input[type="text"]
-    {
-        padding: 15px;
-        font-size: 1rem;
-    }
 
-    .date-box input[type="text"]
-    {
-        width: 3.42em;
-    }
-
-    .cvc-box input[type="text"]
-    {
-        width: 5.52em;
-    }
 
 
 }
