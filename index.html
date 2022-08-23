@@ -41,16 +41,18 @@
         </div>
     </div>
     <div id="right-bottom-background"> <!-- INPUTS DIV -->
-        <form id="card-info" novalidate> <!-- FORM -->
+        <form id="card-info" data-js="formsubmit" novalidate> <!-- FORM -->
             <span class="error-message" data-js="errormessage"></span>
             <div class="input-box"> <!-- INPUT BOX FOR CARDNAME -->
                 <label for="">cardholder name</label>
                 <input type="text" name="carholder" id="cardholder" placeholder="jurisvaldo" data-js="cardnameinput" maxlength="24">
+                <span></span>
             </div>
         
             <div class="input-box"> <!-- INPUT BOX FOR CARDNUMBER -->
                 <label for="">card number</label>
                 <input type="text" name="carholder" id="cardnumber" placeholder="e.g. 1234 5678 9123 0000" maxlength="19" data-js="cardnumberinput">
+                <span></span>
             </div>
         
 
@@ -61,12 +63,13 @@
                         <div class="date-box"> 
                             <input type="text" name="month" id="month" placeholder="MM" data-js="cardmonthinput" maxlength="2">
                             <input type="text" name="year" id="year" placeholder="YY" data-js="cardyearinput" maxlength="2">
-                            
+                            <span></span>
                         </div>
                     </div>
                     <div class="cvc-box">
                         <label for="">cvc</label>
-                        <input type="text" name="year" id="year" placeholder="e.g. 123" data-js="cardcvcinput" maxlength="3">
+                        <input type="text" name="cvc" id="cvcinput" placeholder="e.g. 123" data-js="cardcvcinput" maxlength="3">
+                        <span></span>
                     </div>
                 </div>
             </div>
@@ -74,6 +77,13 @@
             <input type="submit" value="Confirm" data-js="submitbutton">
 
         </form>
+        <div id="submitted">
+            <div class="circle"><img src="./assets/images/icon-complete.svg" alt=""></div>
+            <h2>Thank You!</h2>
+            <p>We've added your card details!</p>
+            <input type="submit" value="Continue">
+
+        </div>
     </div>
     </section>  
 </body>

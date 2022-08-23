@@ -32,13 +32,12 @@ html
 body
 {
     overflow-x: hidden;
+
 }
 section
 {
     display: flex;
     align-items: center;
-
-    max-width: 100%;
     
 }
 
@@ -61,6 +60,7 @@ section
     justify-content: center;
         
     width: 40%;
+        min-width: 280px;
         max-width:345px;  
           
     background: url(../images/bg-main-desktop.png);
@@ -186,8 +186,20 @@ section
         max-width: 20em;
 
     position: relative;
-    
+
+    transition: 0.5s linear;
 }
+
+#card-info.opacity-animation
+{
+    opacity: 0;
+}
+
+#card-info.active
+{
+    display: none;
+}
+
 
 /* INPUTS BOX STYLE */
 
@@ -287,9 +299,12 @@ form input[type="submit"]
     border: none;
     border-radius: 5px;
     padding: 15px;
-    background: var(--secondary-very-dark);
-    color: white;
+
     font-size: 1rem;
+    color: white;
+
+    background: var(--secondary-very-dark);
+    
 }
 
 
@@ -307,6 +322,111 @@ span
     font-size: 1rem;
     font-weight: 500;
     letter-spacing: 2px;
+    color: var(--primary-error);
+}
+
+/* Submitted message */
+
+#submitted
+{
+    text-align: center;
+
+    
+    display: none;
+
+}
+
+#submitted.active
+{
+    display: block;
+    opacity: 0;
+    transition: 0.5s ease-in;
+}
+
+#submitted.opacity-animation
+{
+    opacity: 1;
+}
+
+#submitted h2
+{
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--secondary-very-dark);
+    
+}
+
+#submitted p
+{
+    margin-top: 2rem;
+
+    font-size: 2rem;
+    color: var(--secondary-dark);
+    
+}
+
+#submitted input[type="submit"]
+{
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5rem;
+    padding: 15px;
+
+    font-size: 1rem;
+    color: white;
+
+    background: var(--secondary-very-dark);
+    
+}
+
+/* errors field message */
+
+.emptyfield::before
+{
+    display: block;
+    
+    margin-top: 5px;
+
+    content: "Can't be blank";
+
+    color: var(--primary-error);
+
+    
+}
+
+.cardexpired::before
+{
+    display: block;
+    
+    margin-top: 5px;
+
+    content: "Your card have been expired";
+
+    color: var(--primary-error);
+
+}
+
+.invalidnumber::before
+{
+    display: block;
+    
+    margin-top: 5px;
+
+    content: "Invalid format!";
+
+    color: var(--primary-error);
+}
+
+
+.invaliddate::before
+{
+    display: block;
+    
+    margin-top: 5px;
+
+    content: "invalid month!";
+
     color: var(--primary-error);
 }
 
@@ -386,12 +506,6 @@ span
 @media (min-width: 1100px)
 {
     /* CARDS FATHER DIV SIZING */
-
-    #left-top-background
-    {
-        min-width: 480px;
-
-    }
 
     /* CARDS SIZING AND POSITION */
     #back-card, #front-card

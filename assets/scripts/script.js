@@ -73,9 +73,101 @@ document.querySelector("[data-js='cardcvcinput']").addEventListener('input', (e)
 
 
 
-document.querySelector("[data-js='submitbutton']").addEventListener("submit", (e)=>
+document.querySelector("[data-js='formsubmit']").addEventListener("submit", (e)=>
 {
     e.preventDefault();
 
+    /* SELECTING DOM INPUTS */
+
+    const cardname = document.querySelector("[data-js='cardnameinput'");
+    const cardnumber = document.querySelector("[data-js='cardnumberinput'");
+    const cardmonth = document.querySelector("[data-js='cardmonthinput'");
+    const cardyear = document.querySelector("[data-js='cardyearinput'");
+    const cardcvc = document.querySelector("[data-js='cardcvcinput'");
+
+    const domArr = [cardname, cardnumber, cardmonth, cardyear, cardcvc];
+    const numbersInputArr = [cardnumber, cardyear, cardcvc];
+
+    /* SELECTING FORM SUBMITTING DOM */
+
+    const form = document.querySelector("[data-js='formsubmit']");
+    const congratulationsBox = document.querySelector("#submitted");
+
+    const validInputs = Array.from(domArr).filter( el => el.value !== "" );
+    console.log(validInputs);
+    const validNumberInputs = Array.from(numbersInputArr).filter(el => el.value.length == el.getAttribute("maxlength"));
+    const invalidNumberInputs = Array.from(numbersInputArr).filter(el => el.value.length < el.getAttribute("maxlength"));
+    console.log(validNumberInputs);
+    if (validInputs.length < 5)
+    {
+        domArr.forEach((el, i) => {
+             
+            if (el.value === "")
+            {
+
+                el.nextElementSibling.classList.add("emptyfield");
+
+            } 
+            if (cardmonth.value === "")
+            {
+                cardmonth.nextElementSibling.nextElementSibling.classList.add("emptyfield")
+            }
+            
+        })
+    } 
+    else
+    {
+        
+        domArr.forEach((el, i) => {
+
+            el.nextElementSibling.classList.remove("emptyfield");
+  
+        }) 
+        
+        if (validNumberInputs.length == 3)
+        {
+            validNumberInputs.forEach((el) =>
+            {
+                 el.nextElementSibling.classList.remove("invalidnumber");
+            })
+
+            if (cardmonth.value == 0 || cardmonth.value > 12)
+            {
+                cardmonth.nextElementSibling.nextElementSibling.classList.add("invaliddate");
+            } 
+            else
+            {   
+                cardmonth.nextElementSibling.nextElementSibling.classList.remove("invaliddate");
+
+                if(cardyear.value < 22)
+                {
+                    cardyear.nextElementSibling.classList.add("cardexpired");
+                } 
+                else
+                {
+                    cardyear.nextElementSibling.classList.remove("cardexpired");
+
+                    form.classList.add("opacity-animation");
+                    setTimeout(()=>
+                    {
+                        form.classList.add("active");
+                        congratulationsBox.classList.add("active");
+                        
+                    }, 500);
+                    
+                    setTimeout(()=>congratulationsBox.classList.add("opacity-animation"), 1000);
+                   
+                }
+            }
+        } 
+        else
+        {
+            invalidNumberInputs.forEach((el) =>
+                {
+                    el.nextElementSibling.classList.add("invalidnumber");
+                })
+        }
+    }
+    
     
 })
