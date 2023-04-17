@@ -3,7 +3,7 @@ document.querySelector("[data-js='cardnumberinput']").addEventListener('input', 
     let position = target.selectionEnd;
     let length = target.value.length;
     
-    target.value = target.value.replace(/[^\dA-Z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+    target.value = target.value.replace(/[^\d]/g, '').replace(/(.{4})/g, '$1 ').trim();
     
     target.selectionEnd = position += ((target.value.charAt(position - 1) === ' ' && target.value.charAt(length - 1) === ' ') ? 1 : 0);
     console.log(length + ' ' + ' ' + target.value.length);
@@ -18,7 +18,7 @@ document.querySelector("[data-js='cardnameinput']").addEventListener('input', (e
     let position = target.selectionEnd;
     let length = target.value.length;
 
-    target.value = target.value.replace(/[0-9]/g, '');
+    target.value = target.value.replace(/[^A-Ba-z]/g, '');
 
     const liveCardInput = document.querySelector("[data-js='cardname']");
     liveCardInput.innerHTML = `<p>${target.value}</p>`
@@ -31,7 +31,7 @@ document.querySelector("[data-js='cardmonthinput']").addEventListener('input', (
     let position = target.selectionEnd;
     let length = target.value.length;
 
-    target.value = target.value.replace(/[^\dA-Z]/g, '')
+    target.value = target.value.replace(/[^\d]/g, '')
 
     const liveCardInput = document.querySelector("[data-js='cardmonth']");
     liveCardInput.innerHTML = `<p>${target.value}</p>`
@@ -51,7 +51,7 @@ document.querySelector("[data-js='cardyearinput']").addEventListener('input', (e
     let position = target.selectionEnd;
     let length = target.value.length;
     
-    target.value = target.value.replace(/[^\dA-Z]/g, '')
+    target.value = target.value.replace(/[^\d]/g, '')
 
     const liveCardInput = document.querySelector("[data-js='cardyear']");
     liveCardInput.innerHTML = `<p>${target.value}</p>`
@@ -64,7 +64,7 @@ document.querySelector("[data-js='cardcvcinput']").addEventListener('input', (e)
     let position = target.selectionEnd;
     let length = target.value.length;
     
-    target.value = target.value.replace(/[^\dA-Z]/g, '')
+    target.value = target.value.replace(/[^\d]/g, '')
 
     const liveCardInput = document.querySelector("[data-js='cardcvc']");
     liveCardInput.innerHTML = `<p>${target.value}</p>`
