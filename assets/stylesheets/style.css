@@ -329,6 +329,8 @@ span
     font-weight: 500;
     letter-spacing: 2px;
     color: var(--primary-error);
+    position: absolute;
+    transform: translateY(-150%);
 }
 
 /* Submitted message */
@@ -414,12 +416,14 @@ span
 .invalidnumber::before
 {
     display: block;
-    
     margin-top: 5px;
-
-    content: "Invalid format!";
-
+    content: "*Invalid format!";
+    font-size: .8rem;
     color: var(--primary-error);
+
+    position: absolute;
+    top: -5px;
+    right: 0;
 }
 
 
