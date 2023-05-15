@@ -12,17 +12,26 @@ document.querySelector("[data-js='cardnumberinput']").addEventListener('input', 
     liveCardInput.innerHTML = `<p>${target.value}</p>`
 });
 
+const liveCardInput = document.querySelector("[data-js='cardname']");
+const cardNameInput = document.querySelector("[data-js='cardnameinput']");
 
-document.querySelector("[data-js='cardnameinput']").addEventListener('input', (e) => {
-    let target = e.target;
-    let position = target.selectionEnd;
-    let length = target.value.length;
+cardNameInput.addEventListener('input', (e) => {
+  const { target } = e;
+  const { selectionEnd, value } = target;
+  const length = value.length;
+  const sanitizedValue = value.replace(/[^A-Za-z ]/g, '');
 
-    target.value = target.value.replace(/[^A-Ba-z]/g, '');
+  target.value = sanitizedValue;
+  liveCardInput.innerHTML = `<p>${sanitizedValue}</p>`;
 
-    const liveCardInput = document.querySelector("[data-js='cardname']");
-    liveCardInput.innerHTML = `<p>${target.value}</p>`
-})
+  console.log(length)
+  if (length >= 26) {
+    document.querySelector("#card-name p").style.fontSize = "max(.8rem, .4vw)";
+  }
+  if (length >= 36) {
+    document.querySelector("#card-name p").style.fontSize = "max(.7rem, .4vw)";
+  }
+});
 
 
 
